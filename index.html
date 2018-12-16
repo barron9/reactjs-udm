@@ -10,9 +10,13 @@
     <script src="https://unpkg.com/babel-standalone@latest/babel.min.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="https://unpkg.com/react-id-swiper@1.6.8/lib/react-id-swiper.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.1/css/swiper.css">
+
   </head>
   <body>
     <div id="root"></div>
+
     <script type="text/babel">
 const {
   Button,
@@ -29,6 +33,7 @@ const {
   Typography,
   withStyles,AppBar,Toolbar,TextField,Card,CardActions,CardContent
 } = window['material-ui'];
+//const Swiper =window['react-id-swiper']
 
 const theme = createMuiTheme({
   palette: {
@@ -80,31 +85,31 @@ class Index extends React.Component {
     const { open } = this.state;
 
     return (
-      <MuiThemeProvider theme={theme}>
+      <MuiThemeProvider >
 
-        <AppBar position="static" color="default">
+        <AppBar position="static" color="orange" style={{backgroundColor:"orange"}}>
         <Toolbar style={{flexDirection:'row',justifyContent:'flex-start'}}>
         
-          <Typography variant="h6" color="inherit">
+          <Typography variant="h6" color="white" style={{color:"white"}}>
             PromoClub.com.tr
           </Typography>
           <TextField
           variant="filled"
 
           id="standard-uncontrolled"
-          label="arama"
+          label="Urun veya kategori arama"
           defaultValue=""
           className={classes.textField}
           margin="normal"
-          style={{width:'500px',marginLeft:10}}
+          style={{marginLeft:10,flex:1}}
         />
         </Toolbar>
       </AppBar>
-        <div className={classes.root} style={{alignItems:'center',justifyContent:'center'}}>
+        <div  style={{alignItems:'center',justifyContent:'center',margin:20}}>
+      
 
 
-
-          <Card className={classes.card} style={{width:'300px',height:'200px'}}>
+          <Card className={classes.card} style={{flex:1}}>
       <CardContent>
         <Typography className={classes.title} color="textSecondary" gutterBottom>
           Word of the Day
@@ -128,27 +133,7 @@ class Index extends React.Component {
       </CardActions>
     </Card>
           <CssBaseline />
-          <Dialog open={open} onClose={this.handleClose}>
-            <DialogTitle>Super Secret Password</DialogTitle>
-            <DialogContent>
-              <DialogContentText>1-2-3-4-5</DialogContentText>
-            </DialogContent>
-            <DialogActions>
-              <Button color="primary" onClick={this.handleClose}>
-                OK
-              </Button>
-            </DialogActions>
-          </Dialog>
-          <Typography variant="h4" gutterBottom>
-            PromoClub.com.tr
-          </Typography>
-          <Typography variant="subtitle1" gutterBottom>
-            alisverise hosgeldiniz
-          </Typography>
-          <Button variant="contained" color="secondary" onClick={this.handleClick}>
-            <Icon className={classes.icon}>fingerprint</Icon>
-            Super Secret Password
-          </Button>
+   
 
    
         </div>
